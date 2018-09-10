@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/well_plate96")
 def well_plate96():
-    return render_template('Selectable_plate.html')
+    return render_template('app/Templates/Selectable_plate.html')
 
 
 if __name__ == "__main__":
