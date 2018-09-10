@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <style>
+        .plate_image {
+            background-image: url('../Static/384-well-plate.jpg');
+            background-repeat: no-repeat;
+            width: 1346px;
+            height: 934px;
+            padding: 50px 73px;
+        }
+
+        #plates {
+            padding: 0;/Users/chelseasawyer/WebstormProjects/practice/384-well-plate.jpg
+            margin: 0;
+            list-style-type: none;
+            width: 1203px;
+        }
+
+        #plates li {
+            width: 46px;
+            height: 46px;
+            float: left;
+            margin: .07em .065em;
+        }
+
+        #plates .ui-selecting {
+            background: #E6E6FA;
+        }
+
+        #plates .ui-selected {
+            background: #cedc98;
+            color: lawngreen;
+        }
+
+        .ui-widget-content {
+            background: #DDDDDD;
+            border: 1px solid #DDDDDD;
+            color: #333333;
+        }
+
+        .result-area {
+            background: #DDDDDD;
+            border-top: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            color: #333333;
+            font-size: 14px;
+        }
+
+    </style>
+    <script>
+        $(function() {
+            $("#plates").selectable({
+                selected: function() {
+                    var result = $("#result").empty();
+                    $(".ui-selected", this).each(function() {
+                        var wellID = $(this).attr('title');
+                        result.append(" #" + (wellID));
+                    });
+                }
+            });
+        });</script>
+</head>
+<body>
+<h3>Plate Map</h3>
+<div class="plate_image">
+    <ol id="plates">
+        <li title="A1" class="ui-widget-content"></li>
+        <li title="A2" class="ui-widget-content"></li>
+        <li title="A3" class="ui-widget-content"></li>
+        <li title="A4" class="ui-widget-content"></li>
+        <li title="A5" class="ui-widget-content"></li>
+        <li title="A6" class="ui-widget-content"></li>
+        <li title="A7" class="ui-widget-content"></li>
+        <li title="A8" class="ui-widget-content"></li>
+        <li title="A9" class="ui-widget-content"></li>
+        <li title="A10" class="ui-widget-content"></li>
+        <li title="A11" class="ui-widget-content"></li>
+        <li title="A12" class="ui-widget-content"></li>
+        <li title="A13" class="ui-widget-content"></li>
+        <li title="A14" class="ui-widget-content"></li>
+        <li title="A15" class="ui-widget-content"></li>
+        <li title="A16" class="ui-widget-content"></li>
+        <li title="A17" class="ui-widget-content"></li>
+        <li title="A18" class="ui-widget-content"></li>
+        <li title="A19" class="ui-widget-content"></li>
+        <li title="A20" class="ui-widget-content"></li>
+        <li title="A21" class="ui-widget-content"></li>
+        <li title="A22" class="ui-widget-content"></li>
+        <li title="A23" class="ui-widget-content"></li>
+        <li title="A24" class="ui-widget-content"></li>
+        <li title="B1" class="ui-widget-content"></li>
+        <li title="B2" class="ui-widget-content"></li>
+        <li title="B3" class="ui-widget-content"></li>
+        <li title="B4" class="ui-widget-content"></li>
+        <li title="B5" class="ui-widget-content"></li>
+        <li title="B6" class="ui-widget-content"></li>
+        <li title="B7" class="ui-widget-content"></li>
+        <li title="B8" class="ui-widget-content"></li>
+        <li title="B9" class="ui-widget-content"></li>
+        <li title="B10" class="ui-widget-content"></li>
+        <li title="B11" class="ui-widget-content"></li>
+        <li title="B12" class="ui-widget-content"></li>
+        <li title="B13" class="ui-widget-content"></li>
+        <li title="B14" class="ui-widget-content"></li>
+        <li title="B15" class="ui-widget-content"></li>
+        <li title="B16" class="ui-widget-content"></li>
+        <li title="B17" class="ui-widget-content"></li>
+        <li title="B18" class="ui-widget-content"></li>
+        <li title="B19" class="ui-widget-content"></li>
+        <li title="B20" class="ui-widget-content"></li>
+        <li title="B21" class="ui-widget-content"></li>
+        <li title="B22" class="ui-widget-content"></li>
+        <li title="B23" class="ui-widget-content"></li>
+        <li title="B24" class="ui-widget-content"></li>
+        <li title="C1" class="ui-widget-content"></li>
+        <li title="C2" class="ui-widget-content"></li>
+        <li title="C3" class="ui-widget-content"></li>
+        <li title="C4" class="ui-widget-content"></li>
+        <li title="C5" class="ui-widget-content"></li>
+        <li title="C6" class="ui-widget-content"></li>
+        <li title="C7" class="ui-widget-content"></li>
+        <li title="C8" class="ui-widget-content"></li>
+        <li title="C9" class="ui-widget-content"></li>
+        <li title="C10" class="ui-widget-content"></li>
+        <li title="C11" class="ui-widget-content"></li>
+        <li title="C12" class="ui-widget-content"></li>
+        <li title="C13" class="ui-widget-content"></li>
+        <li title="C14" class="ui-widget-content"></li>
+        <li title="C15" class="ui-widget-content"></li>
+        <li title="C16" class="ui-widget-content"></li>
+        <li title="C17" class="ui-widget-content"></li>
+        <li title="C18" class="ui-widget-content"></li>
+        <li title="C19" class="ui-widget-content"></li>
+        <li title="C20" class="ui-widget-content"></li>
+        <li title="C21" class="ui-widget-content"></li>
+        <li title="C22" class="ui-widget-content"></li>
+        <li title="C23" class="ui-widget-content"></li>
+        <li title="C24" class="ui-widget-content"></li>
+        <li title="D1" class="ui-widget-content"></li>
+        <li title="D2" class="ui-widget-content"></li>
+        <li title="D3" class="ui-widget-content"></li>
+        <li title="D4" class="ui-widget-content"></li>
+        <li title="D5" class="ui-widget-content"></li>
+        <li title="D6" class="ui-widget-content"></li>
+        <li title="D7" class="ui-widget-content"></li>
+        <li title="D8" class="ui-widget-content"></li>
+        <li title="D9" class="ui-widget-content"></li>
+        <li title="D10" class="ui-widget-content"></li>
+        <li title="D11" class="ui-widget-content"></li>
+        <li title="D12" class="ui-widget-content"></li>
+        <li title="D13" class="ui-widget-content"></li>
+        <li title="D14" class="ui-widget-content"></li>
+        <li title="D15" class="ui-widget-content"></li>
+        <li title="D16" class="ui-widget-content"></li>
+        <li title="D17" class="ui-widget-content"></li>
+        <li title="D18" class="ui-widget-content"></li>
+        <li title="D19" class="ui-widget-content"></li>
+        <li title="D20" class="ui-widget-content"></li>
+        <li title="D21" class="ui-widget-content"></li>
+        <li title="D22" class="ui-widget-content"></li>
+        <li title="D23" class="ui-widget-content"></li>
+        <li title="D24" class="ui-widget-content"></li>
+        <li title="E1" class="ui-widget-content"></li>
+        <li title="E2" class="ui-widget-content"></li>
+        <li title="E3" class="ui-widget-content"></li>
+        <li title="E4" class="ui-widget-content"></li>
+        <li title="E5" class="ui-widget-content"></li>
+        <li title="E6" class="ui-widget-content"></li>
+        <li title="E7" class="ui-widget-content"></li>
+        <li title="E8" class="ui-widget-content"></li>
+        <li title="E9" class="ui-widget-content"></li>
+        <li title="E10" class="ui-widget-content"></li>
+        <li title="E11" class="ui-widget-content"></li>
+        <li title="E12" class="ui-widget-content"></li>
+        <li title="E13" class="ui-widget-content"></li>
+        <li title="E14" class="ui-widget-content"></li>
+        <li title="E15" class="ui-widget-content"></li>
+        <li title="E16" class="ui-widget-content"></li>
+        <li title="E17" class="ui-widget-content"></li>
+        <li title="E18" class="ui-widget-content"></li>
+        <li title="E19" class="ui-widget-content"></li>
+        <li title="E20" class="ui-widget-content"></li>
+        <li title="E21" class="ui-widget-content"></li>
+        <li title="E22" class="ui-widget-content"></li>
+        <li title="E23" class="ui-widget-content"></li>
+        <li title="E24" class="ui-widget-content"></li>
+        <li title="F1" class="ui-widget-content"></li>
+        <li title="F2" class="ui-widget-content"></li>
+        <li title="F3" class="ui-widget-content"></li>
+        <li title="F4" class="ui-widget-content"></li>
+        <li title="F5" class="ui-widget-content"></li>
+        <li title="F6" class="ui-widget-content"></li>
+        <li title="F7" class="ui-widget-content"></li>
+        <li title="F8" class="ui-widget-content"></li>
+        <li title="F9" class="ui-widget-content"></li>
+        <li title="F10" class="ui-widget-content"></li>
+        <li title="F11" class="ui-widget-content"></li>
+        <li title="F12" class="ui-widget-content"></li>
+        <li title="F13" class="ui-widget-content"></li>
+        <li title="F14" class="ui-widget-content"></li>
+        <li title="F15" class="ui-widget-content"></li>
+        <li title="F16" class="ui-widget-content"></li>
+        <li title="F17" class="ui-widget-content"></li>
+        <li title="F18" class="ui-widget-content"></li>
+        <li title="F19" class="ui-widget-content"></li>
+        <li title="F20" class="ui-widget-content"></li>
+        <li title="F21" class="ui-widget-content"></li>
+        <li title="F22" class="ui-widget-content"></li>
+        <li title="F23" class="ui-widget-content"></li>
+        <li title="F24" class="ui-widget-content"></li>
+        <li title="G1" class="ui-widget-content"></li>
+        <li title="G2" class="ui-widget-content"></li>
+        <li title="G3" class="ui-widget-content"></li>
+        <li title="G4" class="ui-widget-content"></li>
+        <li title="G5" class="ui-widget-content"></li>
+        <li title="G6" class="ui-widget-content"></li>
+        <li title="G7" class="ui-widget-content"></li>
+        <li title="G8" class="ui-widget-content"></li>
+        <li title="G9" class="ui-widget-content"></li>
+        <li title="G10" class="ui-widget-content"></li>
+        <li title="G11" class="ui-widget-content"></li>
+        <li title="G12" class="ui-widget-content"></li>
+        <li title="G13" class="ui-widget-content"></li>
+        <li title="G14" class="ui-widget-content"></li>
+        <li title="G15" class="ui-widget-content"></li>
+        <li title="G16" class="ui-widget-content"></li>
+        <li title="G17" class="ui-widget-content"></li>
+        <li title="G18" class="ui-widget-content"></li>
+        <li title="G19" class="ui-widget-content"></li>
+        <li title="G20" class="ui-widget-content"></li>
+        <li title="G21" class="ui-widget-content"></li>
+        <li title="G22" class="ui-widget-content"></li>
+        <li title="G23" class="ui-widget-content"></li>
+        <li title="G24" class="ui-widget-content"></li>
+        <li title="H1" class="ui-widget-content"></li>
+        <li title="H2" class="ui-widget-content"></li>
+        <li title="H3" class="ui-widget-content"></li>
+        <li title="H4" class="ui-widget-content"></li>
+        <li title="H5" class="ui-widget-content"></li>
+        <li title="H6" class="ui-widget-content"></li>
+        <li title="H7" class="ui-widget-content"></li>
+        <li title="H8" class="ui-widget-content"></li>
+        <li title="H9" class="ui-widget-content"></li>
+        <li title="H10" class="ui-widget-content"></li>
+        <li title="H11" class="ui-widget-content"></li>
+        <li title="H12" class="ui-widget-content"></li>
+        <li title="H13" class="ui-widget-content"></li>
+        <li title="H14" class="ui-widget-content"></li>
+        <li title="H15" class="ui-widget-content"></li>
+        <li title="H16" class="ui-widget-content"></li>
+        <li title="H17" class="ui-widget-content"></li>
+        <li title="H18" class="ui-widget-content"></li>
+        <li title="H19" class="ui-widget-content"></li>
+        <li title="H20" class="ui-widget-content"></li>
+        <li title="H21" class="ui-widget-content"></li>
+        <li title="H22" class="ui-widget-content"></li>
+        <li title="H23" class="ui-widget-content"></li>
+        <li title="H24" class="ui-widget-content"></li>
+        <li title="I1" class="ui-widget-content"></li>
+        <li title="I2" class="ui-widget-content"></li>
+        <li title="I3" class="ui-widget-content"></li>
+        <li title="I4" class="ui-widget-content"></li>
+        <li title="I5" class="ui-widget-content"></li>
+        <li title="I6" class="ui-widget-content"></li>
+        <li title="I7" class="ui-widget-content"></li>
+        <li title="I8" class="ui-widget-content"></li>
+        <li title="I9" class="ui-widget-content"></li>
+        <li title="I10" class="ui-widget-content"></li>
+        <li title="I11" class="ui-widget-content"></li>
+        <li title="I12" class="ui-widget-content"></li>
+        <li title="I13" class="ui-widget-content"></li>
+        <li title="I14" class="ui-widget-content"></li>
+        <li title="I15" class="ui-widget-content"></li>
+        <li title="I16" class="ui-widget-content"></li>
+        <li title="I17" class="ui-widget-content"></li>
+        <li title="I18" class="ui-widget-content"></li>
+        <li title="I19" class="ui-widget-content"></li>
+        <li title="I20" class="ui-widget-content"></li>
+        <li title="I21" class="ui-widget-content"></li>
+        <li title="I22" class="ui-widget-content"></li>
+        <li title="I23" class="ui-widget-content"></li>
+        <li title="I24" class="ui-widget-content"></li>
+        <li title="J1" class="ui-widget-content"></li>
+        <li title="J2" class="ui-widget-content"></li>
+        <li title="J3" class="ui-widget-content"></li>
+        <li title="J4" class="ui-widget-content"></li>
+        <li title="J5" class="ui-widget-content"></li>
+        <li title="J6" class="ui-widget-content"></li>
+        <li title="J7" class="ui-widget-content"></li>
+        <li title="J8" class="ui-widget-content"></li>
+        <li title="J9" class="ui-widget-content"></li>
+        <li title="J10" class="ui-widget-content"></li>
+        <li title="J11" class="ui-widget-content"></li>
+        <li title="J12" class="ui-widget-content"></li>
+        <li title="J13" class="ui-widget-content"></li>
+        <li title="J14" class="ui-widget-content"></li>
+        <li title="J15" class="ui-widget-content"></li>
+        <li title="J16" class="ui-widget-content"></li>
+        <li title="J17" class="ui-widget-content"></li>
+        <li title="J18" class="ui-widget-content"></li>
+        <li title="J19" class="ui-widget-content"></li>
+        <li title="J20" class="ui-widget-content"></li>
+        <li title="J21" class="ui-widget-content"></li>
+        <li title="J22" class="ui-widget-content"></li>
+        <li title="J23" class="ui-widget-content"></li>
+        <li title="J24" class="ui-widget-content"></li>
+        <li title="K1" class="ui-widget-content"></li>
+        <li title="K2" class="ui-widget-content"></li>
+        <li title="K3" class="ui-widget-content"></li>
+        <li title="K4" class="ui-widget-content"></li>
+        <li title="K5" class="ui-widget-content"></li>
+        <li title="K6" class="ui-widget-content"></li>
+        <li title="K7" class="ui-widget-content"></li>
+        <li title="K8" class="ui-widget-content"></li>
+        <li title="K9" class="ui-widget-content"></li>
+        <li title="K10" class="ui-widget-content"></li>
+        <li title="K11" class="ui-widget-content"></li>
+        <li title="K12" class="ui-widget-content"></li>
+        <li title="K13" class="ui-widget-content"></li>
+        <li title="K14" class="ui-widget-content"></li>
+        <li title="K15" class="ui-widget-content"></li>
+        <li title="K16" class="ui-widget-content"></li>
+        <li title="K17" class="ui-widget-content"></li>
+        <li title="K18" class="ui-widget-content"></li>
+        <li title="K19" class="ui-widget-content"></li>
+        <li title="K20" class="ui-widget-content"></li>
+        <li title="K21" class="ui-widget-content"></li>
+        <li title="K22" class="ui-widget-content"></li>
+        <li title="K23" class="ui-widget-content"></li>
+        <li title="K24" class="ui-widget-content"></li>
+        <li title="L1" class="ui-widget-content"></li>
+        <li title="L2" class="ui-widget-content"></li>
+        <li title="L3" class="ui-widget-content"></li>
+        <li title="L4" class="ui-widget-content"></li>
+        <li title="L5" class="ui-widget-content"></li>
+        <li title="L6" class="ui-widget-content"></li>
+        <li title="L7" class="ui-widget-content"></li>
+        <li title="L8" class="ui-widget-content"></li>
+        <li title="L9" class="ui-widget-content"></li>
+        <li title="L10" class="ui-widget-content"></li>
+        <li title="L11" class="ui-widget-content"></li>
+        <li title="L12" class="ui-widget-content"></li>
+        <li title="L13" class="ui-widget-content"></li>
+        <li title="L14" class="ui-widget-content"></li>
+        <li title="L15" class="ui-widget-content"></li>
+        <li title="L16" class="ui-widget-content"></li>
+        <li title="L17" class="ui-widget-content"></li>
+        <li title="L18" class="ui-widget-content"></li>
+        <li title="L19" class="ui-widget-content"></li>
+        <li title="L20" class="ui-widget-content"></li>
+        <li title="L21" class="ui-widget-content"></li>
+        <li title="L22" class="ui-widget-content"></li>
+        <li title="L23" class="ui-widget-content"></li>
+        <li title="L24" class="ui-widget-content"></li>
+        <li title="M1" class="ui-widget-content"></li>
+        <li title="M2" class="ui-widget-content"></li>
+        <li title="M3" class="ui-widget-content"></li>
+        <li title="M4" class="ui-widget-content"></li>
+        <li title="M5" class="ui-widget-content"></li>
+        <li title="M6" class="ui-widget-content"></li>
+        <li title="M7" class="ui-widget-content"></li>
+        <li title="M8" class="ui-widget-content"></li>
+        <li title="M9" class="ui-widget-content"></li>
+        <li title="M10" class="ui-widget-content"></li>
+        <li title="M11" class="ui-widget-content"></li>
+        <li title="M12" class="ui-widget-content"></li>
+        <li title="M13" class="ui-widget-content"></li>
+        <li title="M14" class="ui-widget-content"></li>
+        <li title="M15" class="ui-widget-content"></li>
+        <li title="M16" class="ui-widget-content"></li>
+        <li title="M17" class="ui-widget-content"></li>
+        <li title="M18" class="ui-widget-content"></li>
+        <li title="M19" class="ui-widget-content"></li>
+        <li title="M20" class="ui-widget-content"></li>
+        <li title="M21" class="ui-widget-content"></li>
+        <li title="M22" class="ui-widget-content"></li>
+        <li title="M23" class="ui-widget-content"></li>
+        <li title="M24" class="ui-widget-content"></li>
+        <li title="N1" class="ui-widget-content"></li>
+        <li title="N2" class="ui-widget-content"></li>
+        <li title="N3" class="ui-widget-content"></li>
+        <li title="N4" class="ui-widget-content"></li>
+        <li title="N5" class="ui-widget-content"></li>
+        <li title="N6" class="ui-widget-content"></li>
+        <li title="N7" class="ui-widget-content"></li>
+        <li title="N8" class="ui-widget-content"></li>
+        <li title="N9" class="ui-widget-content"></li>
+        <li title="N10" class="ui-widget-content"></li>
+        <li title="N11" class="ui-widget-content"></li>
+        <li title="N12" class="ui-widget-content"></li>
+        <li title="N13" class="ui-widget-content"></li>
+        <li title="N14" class="ui-widget-content"></li>
+        <li title="N15" class="ui-widget-content"></li>
+        <li title="N16" class="ui-widget-content"></li>
+        <li title="N17" class="ui-widget-content"></li>
+        <li title="N18" class="ui-widget-content"></li>
+        <li title="N19" class="ui-widget-content"></li>
+        <li title="N20" class="ui-widget-content"></li>
+        <li title="N21" class="ui-widget-content"></li>
+        <li title="N22" class="ui-widget-content"></li>
+        <li title="N23" class="ui-widget-content"></li>
+        <li title="N24" class="ui-widget-content"></li>
+        <li title="O1" class="ui-widget-content"></li>
+        <li title="O2" class="ui-widget-content"></li>
+        <li title="O3" class="ui-widget-content"></li>
+        <li title="O4" class="ui-widget-content"></li>
+        <li title="O5" class="ui-widget-content"></li>
+        <li title="O6" class="ui-widget-content"></li>
+        <li title="O7" class="ui-widget-content"></li>
+        <li title="O8" class="ui-widget-content"></li>
+        <li title="O9" class="ui-widget-content"></li>
+        <li title="O10" class="ui-widget-content"></li>
+        <li title="O11" class="ui-widget-content"></li>
+        <li title="O12" class="ui-widget-content"></li>
+        <li title="O13" class="ui-widget-content"></li>
+        <li title="O14" class="ui-widget-content"></li>
+        <li title="O15" class="ui-widget-content"></li>
+        <li title="O16" class="ui-widget-content"></li>
+        <li title="O17" class="ui-widget-content"></li>
+        <li title="O18" class="ui-widget-content"></li>
+        <li title="O19" class="ui-widget-content"></li>
+        <li title="O20" class="ui-widget-content"></li>
+        <li title="O21" class="ui-widget-content"></li>
+        <li title="O22" class="ui-widget-content"></li>
+        <li title="O23" class="ui-widget-content"></li>
+        <li title="O24" class="ui-widget-content"></li>
+        <li title="P1" class="ui-widget-content"></li>
+        <li title="P2" class="ui-widget-content"></li>
+        <li title="P3" class="ui-widget-content"></li>
+        <li title="P4" class="ui-widget-content"></li>
+        <li title="P5" class="ui-widget-content"></li>
+        <li title="P6" class="ui-widget-content"></li>
+        <li title="P7" class="ui-widget-content"></li>
+        <li title="P8" class="ui-widget-content"></li>
+        <li title="P9" class="ui-widget-content"></li>
+        <li title="P10" class="ui-widget-content"></li>
+        <li title="P11" class="ui-widget-content"></li>
+        <li title="P12" class="ui-widget-content"></li>
+        <li title="P13" class="ui-widget-content"></li>
+        <li title="P14" class="ui-widget-content"></li>
+        <li title="P15" class="ui-widget-content"></li>
+        <li title="P16" class="ui-widget-content"></li>
+        <li title="P17" class="ui-widget-content"></li>
+        <li title="P18" class="ui-widget-content"></li>
+        <li title="P19" class="ui-widget-content"></li>
+        <li title="P20" class="ui-widget-content"></li>
+        <li title="P21" class="ui-widget-content"></li>
+        <li title="P22" class="ui-widget-content"></li>
+        <li title="P23" class="ui-widget-content"></li>
+        <li title="P24" class="ui-widget-content"></li>
+    </ol>
+</div>
+
+<span class="result-area">Selected Product</span>
+<span id="result" class="result-area"></span>
+
+</body>
+</html>

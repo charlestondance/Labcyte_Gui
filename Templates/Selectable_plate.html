@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <style>
+    .plate_image {
+    background-image: url("../Static/96-well-plate.jpg");
+    background-repeat: no-repeat;
+    width: 687px;
+    height: 462px;
+    padding: 33px 40px;
+    }
+
+    #plates {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 627px;
+    }
+
+    #plates li {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    float: left;
+    margin: .04em .065em;
+    }
+
+    #plates .ui-selecting {
+    background: #FECA40;
+    }
+
+    #plates .ui-selected {
+    background: #cedc98;
+    color: lawngreen;
+    }
+
+    .ui-widget-content {
+    background: #DDDDDD;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+    }
+
+    .result-area {
+    background: #DDDDDD;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    color: #333333;
+    font-size: 14px;
+    }
+
+    </style>
+    <script>
+        $(function() {
+            $("#plates").selectable({
+                selected: function() {
+                    var result = $("#result").empty();
+                    $(".ui-selected", this).each(function() {
+                        var wellID = $(this).attr('title');
+                        result.append(" #" + (wellID));
+                    });
+                }
+            });
+        });</script>
+</head>
+<body>
+<h3>Plate Map</h3>
+<div class="plate_image">
+    <ol id="plates">
+        <li title="A1" class="ui-widget-content"></li>
+        <li title="A2" class="ui-widget-content"></li>
+        <li title="A3" class="ui-widget-content"></li>
+        <li title="A4" class="ui-widget-content"></li>
+        <li title="A5" class="ui-widget-content"></li>
+        <li title="A6" class="ui-widget-content"></li>
+        <li title="A7" class="ui-widget-content"></li>
+        <li title="A8" class="ui-widget-content"></li>
+        <li title="A9" class="ui-widget-content"></li>
+        <li title="A10" class="ui-widget-content"></li>
+        <li title="A11" class="ui-widget-content"></li>
+        <li title="A12" class="ui-widget-content"></li>
+        <li title="B1" class="ui-widget-content"></li>
+        <li title="B2" class="ui-widget-content"></li>
+        <li title="B3" class="ui-widget-content"></li>
+        <li title="B4" class="ui-widget-content"></li>
+        <li title="B5" class="ui-widget-content"></li>
+        <li title="B6" class="ui-widget-content"></li>
+        <li title="B7" class="ui-widget-content"></li>
+        <li title="B8" class="ui-widget-content"></li>
+        <li title="B9" class="ui-widget-content"></li>
+        <li title="B10" class="ui-widget-content"></li>
+        <li title="B11" class="ui-widget-content"></li>
+        <li title="B12" class="ui-widget-content"></li>
+        <li title="C1" class="ui-widget-content"></li>
+        <li title="C2" class="ui-widget-content"></li>
+        <li title="C3" class="ui-widget-content"></li>
+        <li title="C4" class="ui-widget-content"></li>
+        <li title="C5" class="ui-widget-content"></li>
+        <li title="C6" class="ui-widget-content"></li>
+        <li title="C7" class="ui-widget-content"></li>
+        <li title="C8" class="ui-widget-content"></li>
+        <li title="C9" class="ui-widget-content"></li>
+        <li title="C10" class="ui-widget-content"></li>
+        <li title="C11" class="ui-widget-content"></li>
+        <li title="C12" class="ui-widget-content"></li>
+        <li title="D1" class="ui-widget-content"></li>
+        <li title="D2" class="ui-widget-content"></li>
+        <li title="D3" class="ui-widget-content"></li>
+        <li title="D4" class="ui-widget-content"></li>
+        <li title="D5" class="ui-widget-content"></li>
+        <li title="D6" class="ui-widget-content"></li>
+        <li title="D7" class="ui-widget-content"></li>
+        <li title="D8" class="ui-widget-content"></li>
+        <li title="D9" class="ui-widget-content"></li>
+        <li title="D10" class="ui-widget-content"></li>
+        <li title="D11" class="ui-widget-content"></li>
+        <li title="D12" class="ui-widget-content"></li>
+        <li title="E1" class="ui-widget-content"></li>
+        <li title="E2" class="ui-widget-content"></li>
+        <li title="E3" class="ui-widget-content"></li>
+        <li title="E4" class="ui-widget-content"></li>
+        <li title="E5" class="ui-widget-content"></li>
+        <li title="E6" class="ui-widget-content"></li>
+        <li title="E7" class="ui-widget-content"></li>
+        <li title="E8" class="ui-widget-content"></li>
+        <li title="E9" class="ui-widget-content"></li>
+        <li title="E10" class="ui-widget-content"></li>
+        <li title="E11" class="ui-widget-content"></li>
+        <li title="E12" class="ui-widget-content"></li>
+        <li title="F1" class="ui-widget-content"></li>
+        <li title="F2" class="ui-widget-content"></li>
+        <li title="F3" class="ui-widget-content"></li>
+        <li title="F4" class="ui-widget-content"></li>
+        <li title="F5" class="ui-widget-content"></li>
+        <li title="F6" class="ui-widget-content"></li>
+        <li title="F7" class="ui-widget-content"></li>
+        <li title="F8" class="ui-widget-content"></li>
+        <li title="F9" class="ui-widget-content"></li>
+        <li title="F10" class="ui-widget-content"></li>
+        <li title="F11" class="ui-widget-content"></li>
+        <li title="F12" class="ui-widget-content"></li>
+        <li title="G1" class="ui-widget-content"></li>
+        <li title="G2" class="ui-widget-content"></li>
+        <li title="G3" class="ui-widget-content"></li>
+        <li title="G4" class="ui-widget-content"></li>
+        <li title="G5" class="ui-widget-content"></li>
+        <li title="G6" class="ui-widget-content"></li>
+        <li title="G7" class="ui-widget-content"></li>
+        <li title="G8" class="ui-widget-content"></li>
+        <li title="G9" class="ui-widget-content"></li>
+        <li title="G10" class="ui-widget-content"></li>
+        <li title="G11" class="ui-widget-content"></li>
+        <li title="G12" class="ui-widget-content"></li>
+        <li title="H1" class="ui-widget-content"></li>
+        <li title="H2" class="ui-widget-content"></li>
+        <li title="H3" class="ui-widget-content"></li>
+        <li title="H4" class="ui-widget-content"></li>
+        <li title="H5" class="ui-widget-content"></li>
+        <li title="H6" class="ui-widget-content"></li>
+        <li title="H7" class="ui-widget-content"></li>
+        <li title="H8" class="ui-widget-content"></li>
+        <li title="H9" class="ui-widget-content"></li>
+        <li title="H10" class="ui-widget-content"></li>
+        <li title="H11" class="ui-widget-content"></li>
+        <li title="H12" class="ui-widget-content"></li>
+    </ol>
+</div>
+
+<span class="result-area">Selected Product</span>
+<span id="result" class="result-area"></span>
+
+</body>
+</html>
