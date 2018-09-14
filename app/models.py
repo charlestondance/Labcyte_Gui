@@ -78,3 +78,68 @@ class Permission:
     EDIT_DB = 0x01
     MAKE_LIST = 0x02
     ADMINISTER = 0x80
+
+class LabcytePicklist(db.Model):
+    #this is the details for the liquid transfer
+    __tablename__ = 'labcyte_picklist'
+    id = db.Column(db.Integer, primary_key=True)
+    unique_job_id = db.Column(db.String(64), unique=False, index=True)
+    user_name = db.Column(db.String(64), unique=False, index=True)
+    transfer_id = db.Column(db.Integer, unique=False, index=True)
+    source_well_id = db.Column(db.String(64), unique=False, index=True)
+    source_barcode = db.Column(db.String(64), unique=False, index=True)
+    destination_well_id = db.Column(db.String(64), unique=False, index=True)
+    destination_plate_barcode = db.Column(db.String(64), unique=False, index=True)
+    source_plate_number = db.Column(db.Integer, unique=False, index=True)
+    destination_plate_number = db.Column(db.Integer, unique=False, index=True)
+    transfer_volume = db.Column(db.Integer, unique=False, index=True)
+    liquid_class = db.Column(db.String(64), unique=False, index=True)
+    source_plate_type = db.Column(db.Integer, unique=False, index=True)
+    destination_plate_type = db.Column(db.Integer, unique=False, index=True)
+
+class JobInformation(db.Model):
+    #this is the details for the liquid transfer
+    __tablename__ = 'job_information'
+    id = db.Column(db.Integer, primary_key=True)
+    unique_job_id = db.Column(db.String(64), unique=False, index=True)
+    user_name = db.Column(db.String(64), unique=False, index=True)
+    number_of_source_plates = db.Column(db.Integer, unique=False, index=True)
+    number_of_destination_plates = db.Column(db.Integer, unique=False, index=True)
+    echo_type = db.Column(db.String(64), unique=False, index=True)
+
+class LiquidClasses(db.Model):
+    __tablename__ = 'liquid_classes'
+    id = db.Column(db.Integer, primary_key=True)
+    echo_type = db.Column(db.String(64), unique=False, index=True)
+    liquid_class_name = db.Column(db.String(64), unique=False, index=True)
+    liquid_class_number = db.Column(db.Integer, unique=False, index=True)
+
+class SourcePlateTypes(db.Model):
+    __tablename__ = 'source_plate_types'
+    id = db.Column(db.Integer, primary_key=True)
+    echo_type = db.Column(db.String(64), unique=False, index=True)
+    source_plate_name = db.Column(db.String(64), unique=False, index=True)
+    source_plate_number = db.Column(db.Integer, unique=False, index=True)
+    number_of_wells = db.Column(db.Integer, unique=False, index=True)
+    number_of_rows = db.Column(db.Integer, unique=False, index=True)
+    number_of_columns = db.Column(db.Integer, unique=False, index=True)
+
+class DestinationPlateTypes(db.Model):
+    __tablename__ = 'destination_plate_types'
+    id = db.Column(db.Integer, primary_key=True)
+    echo_type = db.Column(db.String(64), unique=False, index=True)
+    source_plate_name = db.Column(db.String(64), unique=False, index=True)
+    source_plate_number = db.Column(db.Integer, unique=False, index=True)
+    number_of_wells = db.Column(db.Integer, unique=False, index=True)
+    number_of_rows = db.Column(db.Integer, unique=False, index=True)
+    number_of_columns = db.Column(db.Integer, unique=False, index=True)
+
+class WellIds(db.Model):
+    __tablename__ = 'well_ids'
+    id = db.Column(db.Integer, primary_key=True)
+    row_letter = db.Column(db.String(64), unique=False, index=True)
+    column_number = db.Column(db.Integer, unique=False, index=True)
+    well_number = db.Column(db.Integer, unique=False, index=True)
+    well_id = db.Column(db.String(64), unique=False, index=True)
+    plate_name = db.Column(db.String(64), unique=False, index=True)
+    total_number_wells = db.Column(db.Integer, unique=False, index=True)

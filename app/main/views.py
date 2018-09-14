@@ -10,3 +10,15 @@ def index():
 
 
     return render_template('index.html')
+
+@main.route('/raisejob')
+def raise_job():
+
+
+    return render_template('index.html')
+
+@main.route('.make_picklist')
+def make_picklist():
+
+
+    return render_template('index.html')

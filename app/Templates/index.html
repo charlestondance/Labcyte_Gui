@@ -4,4 +4,14 @@
 
 {% block page_content %}
 
+    <P>
+                {% if current_user.is_authenticated %}
+                <h2>Design Tools</h2>
+
+                <li><a href="{{ url_for('main.raise_job') }}">Raise Job</a></li>
+                    <li><a href="{{ url_for('main.make_picklist') }}">Make Picklist</a></li>
+
+                {% endif %}
+</P>
+
 {% endblock %}
